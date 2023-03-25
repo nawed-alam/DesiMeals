@@ -1,6 +1,8 @@
  import 'package:desi_meals/models/meal.dart';
+import 'package:desi_meals/screens/meal_detail_screen.dart';
 import 'package:flutter/material.dart';
  class MealItem extends StatelessWidget {
+  final String id;
    final String title;
    final String imageUrl;
    final int duration;
@@ -8,6 +10,7 @@ import 'package:flutter/material.dart';
    final Affordability affordability;   
 
    MealItem({
+    required this.id,
     required this.title,
     required this.imageUrl,
     required this.duration,
@@ -20,7 +23,7 @@ import 'package:flutter/material.dart';
     case Complexity.Simple :
     return 'Simple';
     break;
-    case Complexity.Challenging :
+    case Complexity.Challenging : 
     return 'Challenging';
     break;
     case Complexity.Hard :
@@ -47,12 +50,12 @@ import 'package:flutter/material.dart';
   }
    }
  
- void selectMeal(){
-
+ void selectMeal(BuildContext context){
+ Navigator.of(context).pushNamed(MealDetailScreen.routeName,arguments:id, );
  }
    @override
    Widget build(BuildContext context) {
-     return InkWell(onTap:selectMeal ,
+     return InkWell(onTap:() => selectMeal(context) ,
      child: Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
