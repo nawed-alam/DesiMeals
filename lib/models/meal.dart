@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 enum Complexity{
   Simple,
   Challenging,
@@ -26,8 +25,19 @@ final bool isGlutenFree;
 final bool isLactoseFree;
 final bool isVegan;
 final bool isVegetarian;
-const Meal({ required this.id,required this.categories,required this.imageUrl,
-       required this.ingredients,required this.steps,required this.title,required this.duration,
-        required this.complexity,required this.affordability,required this.isGlutenFree,required this.isLactoseFree,required this.isVegan,required this.isVegetarian});
+const Meal({ 
+  required this.id,
+  required this.categories,
+  required this.imageUrl,
+  required this.ingredients,
+  required this.steps,
+  required this.title,
+  required this.duration,
+  required this.complexity,
+  required this.affordability,
+  required this.isGlutenFree,
+  required this.isLactoseFree,
+  required this.isVegan,
+  required this.isVegetarian});
 
 }

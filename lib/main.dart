@@ -1,8 +1,8 @@
-import 'package:desi_meals/screens/categories_screen.dart';
 import 'package:desi_meals/screens/category_meals_screen.dart';
 import 'package:desi_meals/screens/meal_detail_screen.dart';
+import 'package:desi_meals/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
-void main() => runApp(MyApp());
+void main() => runApp( const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,16 +14,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.pink,
         colorScheme: ColorScheme.fromSwatch()
             .copyWith(secondary: Colors.amber),
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        canvasColor:const  Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-       bodySmall: TextStyle(
+       bodySmall: const TextStyle(
         color: Color.fromRGBO(20, 51, 51, 1),
        ),
-       bodyLarge: TextStyle(
+       bodyLarge: const TextStyle(
         color: Color.fromRGBO(20, 51, 51, 1),
        ),
-       titleMedium: TextStyle(
+       titleMedium: const TextStyle(
         fontSize: 20 ,
         fontFamily: 'RobotoCondensed',
         fontWeight:FontWeight.bold,
@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget {
      // home: CategoriesScreen(),
      initialRoute: '/ ',
       routes: {
-        '/':(context) => CategoriesScreen(),
+        '/':(context) => const TabsScreen(),
         CategoryMealsScreen.routeName :(context) => CategoryMealsScreen(),
-        MealDetailScreen.routeName :(context) => MealDetailScreen(),
+        MealDetailScreen.routeName :(context) =>const  MealDetailScreen(),
       },
     );
   }
