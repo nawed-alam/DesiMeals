@@ -1,3 +1,4 @@
+import 'package:desi_meals/screens/filter_screen.dart';
 import 'package:flutter/material.dart';
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
@@ -31,7 +32,7 @@ class MainDrawer extends StatelessWidget {
             ),
           ),
           onTap: () {
-            
+            Navigator.of(context).pushReplacementNamed('/');
           },
           ),
           ListTile(leading: Icon(
@@ -45,7 +46,7 @@ class MainDrawer extends StatelessWidget {
             ),
           ),
           onTap: () {
-            
+            Navigator.of(context).pushReplacementNamed(FilterScreen.routeName);
           },
           ),
         ],

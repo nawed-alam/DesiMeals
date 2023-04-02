@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
    final String imageUrl;
    final int duration;
    final Complexity complexity;
-   final Affordability affordability;   
+   final Affordability affordability;  
+   final Function removeItem;
 
    MealItem({
     required this.id,
@@ -16,6 +17,7 @@ import 'package:flutter/material.dart';
     required this.duration,
     required this.affordability,
     required this.complexity,
+    required this.removeItem,
    });
 
    String get complexityText{
@@ -51,7 +53,15 @@ import 'package:flutter/material.dart';
    }
  
  void selectMeal(BuildContext context){
- Navigator.of(context).pushNamed(MealDetailScreen.routeName,arguments:id, );
+ Navigator.of(context).pushNamed(
+  MealDetailScreen.routeName,
+  arguments:id,
+   ).then((result) {
+      if(result!= null )
+      {
+        removeItem(result);
+      }
+   });
  }
    @override
    Widget build(BuildContext context) {
